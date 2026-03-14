@@ -1,0 +1,59 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+	<h3 class="titrem"><:statistiques_bun:cfg_titre_parametrages:/></h3>
+
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}">
+	<div>
+		#ACTION_FORMULAIRE
+
+		<p class="explication"><:statistiques_bun:cfg_explication_generale:/></p>
+
+		<div class="editer-groupe">
+			<div class="editer editer_site_url[ (#ENV**{erreurs/site_url}|oui)erreur]">
+				<label for="statistiques-bun-site-url"><:statistiques_bun:cfg_site_url_label:/></label>
+				[<span class="erreur_message">(#ENV**{erreurs/site_url})</span>]
+				<input type="url" name="site_url" id="statistiques-bun-site-url" value="#ENV{site_url}" class="text" placeholder="https://notre-environnement.gouv.fr" />
+				<p class="explication"><:statistiques_bun:cfg_site_url_explication:/></p>
+			</div>
+
+			<div class="editer editer_matomo_url[ (#ENV**{erreurs/matomo_url}|oui)erreur]">
+				<label for="statistiques-bun-matomo-url"><:statistiques_bun:cfg_matomo_url_label:/></label>
+				[<span class="erreur_message">(#ENV**{erreurs/matomo_url})</span>]
+				<input type="url" name="matomo_url" id="statistiques-bun-matomo-url" value="#ENV{matomo_url}" class="text" placeholder="https://audience-sites.din.developpement-durable.gouv.fr/" />
+				<p class="explication"><:statistiques_bun:cfg_matomo_url_explication:/></p>
+			</div>
+
+			<div class="editer editer_idsite[ (#ENV**{erreurs/idsite}|oui)erreur]">
+				<label for="statistiques-bun-idsite"><:statistiques_bun:cfg_idsite_label:/></label>
+				[<span class="erreur_message">(#ENV**{erreurs/idsite})</span>]
+				<input type="number" min="1" step="1" name="idsite" id="statistiques-bun-idsite" value="#ENV{idsite}" class="text" />
+				<p class="explication"><:statistiques_bun:cfg_idsite_explication:/></p>
+			</div>
+
+			<div class="editer editer_token_auth">
+				<label for="statistiques-bun-token-auth"><:statistiques_bun:cfg_token_auth_label:/></label>
+				<input type="password" name="token_auth" id="statistiques-bun-token-auth" value="#ENV{token_auth}" class="text" autocomplete="off" />
+				<p class="explication"><:statistiques_bun:cfg_token_auth_explication:/></p>
+			</div>
+
+			<div class="editer editer_visibilite_dashboard[ (#ENV**{erreurs/visibilite_dashboard}|oui)erreur]">
+				<label for="statistiques-bun-visibilite"><:statistiques_bun:cfg_visibilite_label:/></label>
+				[<span class="erreur_message">(#ENV**{erreurs/visibilite_dashboard})</span>]
+				<select name="visibilite_dashboard" id="statistiques-bun-visibilite">
+					<option value="public"[(#ENV{visibilite_dashboard}|=={public}|oui) selected="selected"]><:statistiques_bun:cfg_visibilite_public:/></option>
+					<option value="prive_connecte"[(#ENV{visibilite_dashboard}|=={prive_connecte}|oui) selected="selected"]><:statistiques_bun:cfg_visibilite_prive_connecte:/></option>
+					<option value="webmestre"[(#ENV{visibilite_dashboard}|=={webmestre}|oui) selected="selected"]><:statistiques_bun:cfg_visibilite_webmestre:/></option>
+				</select>
+				<p class="explication"><:statistiques_bun:cfg_visibilite_explication:/></p>
+			</div>
+		</div>
+
+		<p class="boutons">
+			<button type="submit"><:bouton_enregistrer:/></button>
+		</p>
+	</div>
+	</form>
+</div>

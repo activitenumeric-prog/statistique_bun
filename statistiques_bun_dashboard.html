@@ -1,0 +1,14 @@
+#CACHE{0}
+<!DOCTYPE html>
+<html lang="#LANG">
+<head>
+	<meta charset="#CHARSET" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title><:statistiques_bun:dashboard_titre:/></title>
+	<link rel="stylesheet" href="#CHEMIN{css/statistiques_bun.css}" />
+	#INSERT_HEAD
+</head>
+<body class="page-statistiques-bun">
+[(#VAL|statistiques_bun_render_dashboard{#ENV{range_key,last_month}})]
+</body>
+</html>
