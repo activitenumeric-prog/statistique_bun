@@ -24,10 +24,6 @@ function statistiques_bun_upgrade($nom_meta_base_version, $version_cible) {
 		['statistiques_bun_initialiser_config'],
 	];
 
-	$maj['1.1.0'] = [
-		['statistiques_bun_initialiser_config'],
-	];
-
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 }

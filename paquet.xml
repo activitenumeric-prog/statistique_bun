@@ -1,11 +1,11 @@
 <paquet
 	prefix="statistiques_bun"
-	version="1.1.0"
+	version="1.0.0"
 	etat="dev"
 	compatibilite="[4.0.0;4.4.*]"
 	logo="prive/themes/spip/images/statistiques_bun-xx.svg"
-	documentation=""
-	schema="1.1.0" 
+	documentation="README.md"
+	schema="1.0.0" 
 >
 	<!--
 		Paquet généré le 2026-03-14 18:26:36 par Site Plugin
